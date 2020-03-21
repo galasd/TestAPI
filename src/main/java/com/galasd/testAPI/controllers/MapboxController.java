@@ -48,11 +48,9 @@ public class MapboxController {
                                              @Valid @RequestBody Mapbox cityDetails) throws ResourceAccessException {
         Mapbox mapbox = mapboxRepository.findById(cityId).
                 orElseThrow(() -> new ResourceAccessException("City not found on " + cityId));
-
         mapbox.setName(cityDetails.getName());
         mapbox.setLatitude(cityDetails.getLatitude());
         mapbox.setLongitude(cityDetails.getLongitude());
-        //todo updated at
 
         final Mapbox updatedMapbox = mapboxRepository.save(cityDetails);
         return ResponseEntity.ok().body(updatedMapbox);
@@ -61,7 +59,7 @@ public class MapboxController {
 
     // Delete city
     @DeleteMapping("/mapbox/{id}")
-    public Map<String, Boolean> deleteCity(@PathVariable(value = "id") Long cityId) throws Exception {
+    public Map<String, Boolean> deleteCity(@PathVariable(value = "id") Long cityId) {
         Mapbox mapbox = mapboxRepository.findById(cityId).orElseThrow(() -> new ResourceAccessException(
                 "City not found on " + cityId));
 
