@@ -8,7 +8,6 @@ import javax.persistence.*;
 @Table(name = "mapbox")
 @EntityListeners(AuditingEntityListener.class)
 public class Mapbox {
-
     // Specified columns in given mapbox table
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,18 +24,18 @@ public class Mapbox {
     private Double longitude;
 
     // Accessors and mutators for all fields
-    public Mapbox(){
+    public Mapbox() {
     }
 
-    public int getPlaceId(){
+    public int getPlaceId() {
         return placeId;
     }
 
-    public void setPlaceId(int id){
+    public void setPlaceId(int id) {
         this.placeId = id;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
@@ -44,7 +43,7 @@ public class Mapbox {
         this.name = placeName;
     }
 
-    public Double getLatitude(){
+    public Double getLatitude() {
         return latitude;
     }
 
@@ -52,12 +51,11 @@ public class Mapbox {
         this.latitude = placeLatitude;
     }
 
-    public Double getLongitude(){
+    public Double getLongitude() {
         return longitude;
     }
 
     public void setLongitude(Double placeLongitude) {
         this.longitude = placeLongitude;
     }
-
 }

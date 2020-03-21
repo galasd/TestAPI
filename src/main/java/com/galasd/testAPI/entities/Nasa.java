@@ -7,9 +7,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "nasa")
 @EntityListeners(AuditingEntityListener.class)
-
 public class Nasa {
-
     // Specified columns in given nasa table
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,6 +47,4 @@ public class Nasa {
     public void setEarthDistance(int distance) {
         this.earthDistance = distance;
     }
-
-
 }

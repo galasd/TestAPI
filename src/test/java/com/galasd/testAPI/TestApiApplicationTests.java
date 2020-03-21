@@ -13,7 +13,6 @@ import org.springframework.http.*;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.HttpClientErrorException;
 
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 class TestApiApplicationTests {
