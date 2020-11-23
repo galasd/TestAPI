@@ -9,8 +9,7 @@ RUN mvn -f F:/David/Develop2/testAPI/pom.xml clean package
 
 # Package stage
 FROM openjdk:8
-EXPOSE 8080
 ADD target/testAPI.jar testAPI.jar
-ENTRYPOINT ["java","-jar","/testAPI.jar"]
-
+ENTRYPOINT ["java", "-jar", "testAPI.jar", "--Dspring.profiles.active=container"]
+EXPOSE 8080
 MAINTAINER David

@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  # mysql-container:
+  #   image: mysql:latest
+  #   container_name: my_mysql
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: my_secret_password
+  #     MYSQL_DATABASE: myApi
+  #    MYSQL_USER: myuser
+  #   MYSQL_PASSWORD: api2020
+  # ports:
+  #   - "3306:3306"
+  # volumes:
+  #   - F:\David\Docker\mysql
+  api-container:
+    image: api-image
+    build:
+      context: ./
+      dockerfile: dockerfile
+    # depends_on:
+    #   - mysql-container
+    ports:
+      - 8080:8080
+    # network_mode: "host"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3308/dp
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD:
